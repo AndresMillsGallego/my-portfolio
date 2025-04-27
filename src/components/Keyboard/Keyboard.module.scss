@@ -1,0 +1,111 @@
+.keyboard {
+  margin-left: 35%;
+  margin-top: 12.5%;
+  display: flex;
+  align-items: flex-end;
+  max-width: fit-content;
+  justify-content: space-between;
+  border: 2px solid;
+  border-radius: 100px;
+  background-color: #3c3c3c;
+  overflow: hidden;
+
+  .keyboard-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-right: 2px solid;
+    margin-right: 0.5rem;
+    max-width: 25rem;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .keyboard-right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 90px;
+  }
+
+  .key:hover {
+    cursor: pointer;
+  }
+
+  .key {
+    margin-right: 0.5rem;
+  }
+
+  .row,
+  .volume-row {
+    margin-bottom: 0.5rem;
+  }
+
+  .volume-row {
+    display: flex;
+    margin-right: 0.5rem;
+  }
+}
+
+.key {
+  position: relative;
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #282828, #202020);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.795), 10px 20px 25px;
+  overflow: hidden;
+}
+
+.key::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  bottom: 14px;
+  right: 14px;
+  background: linear-gradient(90deg, #232323, #4a4a4a);
+  box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25),
+    10px 5px 10px rgba(0, 0, 0, 0.4);
+  border: 2px solid #0004;
+  border-radius: 10px;
+}
+
+.highlight {
+  background: linear-gradient(180deg, #f00, #680404);
+}
+
+.highlight::before {
+  background: linear-gradient(90deg, #d20000, #ffffff41);
+}
+
+.light {
+  background: linear-gradient(180deg, #949494, #4e4e4e);
+}
+
+.light::before {
+  background: linear-gradient(90deg, #6d6d6d, #878787);
+}
+
+.enter-key {
+  width: 160px;
+}
+
+.shift-key {
+  width: 210px;
+}
+
+.backspace-key {
+  width: 140px;
+}
+
+.key-content {
+  position: relative;
+  top: 27.5px;
+  right: 2px;
+  z-index: 1;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  width: fit-content;
+}

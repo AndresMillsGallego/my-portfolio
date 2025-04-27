@@ -1,0 +1,30 @@
+.volume-div {
+  position: relative;
+  padding: 1rem;
+  width: 85px;
+  height: 85px;
+  background: linear-gradient(180deg, #282828, #202020);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.795), 10px 20px 25px;
+  border: 1px solid #0004;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.volume-div::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  bottom: 6px;
+  right: 6px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #232323, #4a4a4a);
+  background-image: url(../../../assets/Vinyl.png);
+  background-size: cover;
+  box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25),
+    10px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+div.volume-div:hover {
+  cursor: pointer;
+}
