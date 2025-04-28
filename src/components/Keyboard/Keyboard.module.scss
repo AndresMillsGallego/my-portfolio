@@ -1,6 +1,4 @@
 .keyboard {
-  margin-left: 35%;
-  margin-top: 12.5%;
   display: flex;
   align-items: flex-end;
   max-width: fit-content;
@@ -8,7 +6,13 @@
   border: 2px solid;
   border-radius: 100px;
   background-color: #3c3c3c;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow: hidden;
+  cursor: grab;
+
+  :active {
+    cursor: grabbing;
+  }
 
   .keyboard-left {
     display: flex;
@@ -16,6 +20,7 @@
     align-items: flex-end;
     border-right: 2px solid;
     margin-right: 0.5rem;
+    padding-right: 0.25rem;
     max-width: 25rem;
     white-space: nowrap;
     overflow: hidden;
@@ -25,6 +30,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 90px;
+    margin-left: 0.25rem;
   }
 
   .key:hover {
@@ -35,14 +41,16 @@
     margin-right: 0.5rem;
   }
 
-  .row,
-  .volume-row {
+  .row {
     margin-bottom: 0.5rem;
   }
 
   .volume-row {
     display: flex;
     margin-right: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid;
   }
 }
 

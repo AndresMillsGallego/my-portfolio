@@ -28,3 +28,13 @@
 div.volume-div:hover {
   cursor: pointer;
 }
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.record-playing {
+  animation: rotate 1.5s linear infinite;
+}
