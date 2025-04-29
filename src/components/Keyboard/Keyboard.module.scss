@@ -29,7 +29,7 @@
   .keyboard-right {
     display: flex;
     flex-direction: column;
-    row-gap: 90px;
+    row-gap: 115px;
     margin-left: 0.25rem;
   }
 
@@ -42,13 +42,14 @@
   }
 
   .row {
-    margin-bottom: 0.5rem;
+    margin: 0.25rem 0;
   }
 
   .volume-row {
     display: flex;
     margin-right: 0.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     padding-bottom: 0.75rem;
     border-bottom: 2px solid;
   }

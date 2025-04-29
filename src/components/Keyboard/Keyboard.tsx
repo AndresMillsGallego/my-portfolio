@@ -1,8 +1,16 @@
+import { useContext } from "react";
 import Key from "./Key";
 import style from "./Keyboard.module.scss";
 import VolumeKnob from "./VolumeKnob/VolumeKnob";
+import { AppContext } from "../../Context/context";
 
 const Keyboard = () => {
+  const { setShowPage } = useContext(AppContext);
+
+  const handleEnterClick = () => {
+    setShowPage(true);
+  };
+
   return (
     <div className={style["keyboard"]}>
       <div className={style["keyboard-left"]}>
@@ -32,6 +40,7 @@ const Keyboard = () => {
             variant="highlight"
             keyContainerClass="enter-key"
             content="⏎ enter"
+            onClick={handleEnterClick}
           />
         </div>
         <div className={style["row"]}>

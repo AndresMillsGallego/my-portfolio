@@ -1,13 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useContext } from "react";
 import style from "./VolumeKnob.module.scss";
-import ClaireDeLune from "../../../assets/audio/ClairDeLune.mp3";
+import { AppContext } from "../../../Context/context";
 
 const VolumeKnob = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const song = useMemo(() => {
-    return new Audio(ClaireDeLune);
-  }, []);
+  const { isPlaying, setIsPlaying, song } = useContext(AppContext);
 
   const startRecord = isPlaying;
 
@@ -18,6 +14,8 @@ const VolumeKnob = () => {
       song.pause();
     }
   };
+
+  song.addEventListener("ended", () => setIsPlaying(false));
 
   useEffect(() => {
     if (startRecord) {
