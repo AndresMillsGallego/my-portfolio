@@ -1,0 +1,23 @@
+.header {
+  width: 100vw;
+  height: 75px;
+  border-bottom: 2px solid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  color: azure;
+  font-size: 1rem;
+  margin-left: 2rem;
+
+  .header-name {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid;
+  }
+}

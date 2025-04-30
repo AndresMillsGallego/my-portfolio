@@ -7,11 +7,16 @@ const Splash = () => {
   const dragConstraintRef = useRef(null);
 
   return (
-    <motion.div className={style["splash-container"]} ref={dragConstraintRef}>
-      <motion.div drag dragConstraints={dragConstraintRef}>
+    <div className={style["splash-container"]} ref={dragConstraintRef}>
+      <motion.div
+        drag
+        dragConstraints={dragConstraintRef}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+      >
         <Keyboard />
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

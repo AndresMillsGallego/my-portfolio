@@ -5,6 +5,7 @@ import Splash from "./Pages/Splash/Splash";
 import { AnimatePresence, motion } from "motion/react";
 import { Backdrop } from "@mui/material";
 import MirrorMe from "./assets/MirrorMe.jpg";
+import Header from "./components/Header/Header";
 
 function App() {
   const { showPage, setShowPage, isPlaying, showSplashPage } =
@@ -17,22 +18,15 @@ function App() {
 
   return (
     <div className={style["app"]}>
+      <Header />
       <Backdrop
         open={backdropOpen}
         onClick={() => setBackdropOpen(false)}
         sx={(theme) => ({ color: "#fff", zIndex: theme.zIndex.drawer + 1 })}
       ></Backdrop>
-      <AnimatePresence>
-        {showSplashPage && !showPage ? (
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
-          >
-            <Splash />
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+
+      {showSplashPage && !showPage ? <Splash /> : null}
+
       <AnimatePresence>
         {showPage ? (
           <motion.div
