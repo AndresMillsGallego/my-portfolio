@@ -1,8 +1,10 @@
 .header {
+  position: absolute;
   width: 100vw;
   height: 75px;
   border-bottom: 2px solid;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  backdrop-filter: blur(15px);
   z-index: 10;
   display: flex;
   align-items: center;
@@ -15,9 +17,42 @@
   font-size: 1rem;
   margin-left: 2rem;
 
+  .code-icon {
+    cursor: pointer;
+  }
+
   .header-name {
     margin-left: 1rem;
     padding-left: 1rem;
     border-left: 2px solid;
+  }
+
+  .title {
+    display: inline-flex;
+
+    span {
+      word-break: break-all;
+      height: 1.2em;
+      width: 0%;
+      overflow: hidden;
+      animation: type 3s linear forwards, carat 0.5s step-end infinite;
+    }
+
+    @keyframes type {
+      90%,
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes carat {
+      0%,
+      100% {
+        box-shadow: 2px 0 0 #0000;
+      }
+      50% {
+        box-shadow: 2px 0 0 azure;
+      }
+    }
   }
 }
