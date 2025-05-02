@@ -1,29 +1,28 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import style from "./App.module.scss";
 import { AppContext } from "./Context/context";
 import Splash from "./Pages/Splash/Splash";
 import { AnimatePresence, motion } from "motion/react";
-import { Backdrop } from "@mui/material";
+//import { Backdrop } from "@mui/material";
 import MirrorMe from "./assets/MirrorMe.jpg";
 import Header from "./components/Header/Header";
 
 function App() {
-  const { showPage, setShowPage, isPlaying, showSplashPage } =
-    useContext(AppContext);
-  const [backdropOpen, setBackdropOpen] = useState(false);
+  const { showPage, setShowPage, showSplashPage } = useContext(AppContext);
+  // const [backdropOpen, setBackdropOpen] = useState(false);
 
-  useEffect(() => {
-    if (isPlaying) setBackdropOpen(true);
-  }, [isPlaying]);
+  // useEffect(() => {
+  //   if (isPlaying) setBackdropOpen(true);
+  // }, [isPlaying]);
 
   return (
     <div className={style["app"]}>
       <Header />
-      <Backdrop
+      {/* <Backdrop
         open={backdropOpen}
         onClick={() => setBackdropOpen(false)}
         sx={(theme) => ({ color: "#fff", zIndex: theme.zIndex.drawer + 1 })}
-      ></Backdrop>
+      ></Backdrop> */}
 
       {showSplashPage && !showPage ? <Splash /> : null}
 

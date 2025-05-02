@@ -17,7 +17,8 @@
   font-size: 1rem;
   margin-left: 2rem;
 
-  .code-icon {
+  .code-icon,
+  .carat-only {
     cursor: pointer;
   }
 
@@ -30,12 +31,16 @@
   .title {
     display: inline-flex;
 
-    span {
+    .animated-title {
       word-break: break-all;
       height: 1.2em;
       width: 0%;
       overflow: hidden;
-      animation: type 3s linear forwards, carat 0.5s step-end infinite;
+      animation: type 2.25s linear forwards, carat 0.5s step-end infinite;
+    }
+
+    .carat-only {
+      animation: carat 0.5s step-end infinite;
     }
 
     @keyframes type {
