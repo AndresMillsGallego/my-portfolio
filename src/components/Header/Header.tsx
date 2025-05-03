@@ -6,14 +6,14 @@ import { AppContext } from "../../Context/context";
 import { HeaderTitles } from "../../types/types";
 
 const Header = () => {
-  const { setShowSplashPage, setShowPage } = useContext(AppContext);
+  const { setShowSplashPage, setShowAboutMePage } = useContext(AppContext);
   const [title, setTitle] = useState<string>(HeaderTitles.SOFTWARE_ENGINEER);
   const [titles, setTitles] = useState<string[]>(Object.values(HeaderTitles));
   const [animate, setAnimate] = useState<boolean>(true);
 
   const handleIconClick = () => {
     setShowSplashPage(true);
-    setShowPage(false);
+    setShowAboutMePage(false);
   };
 
   const handleTitleClick = () => {

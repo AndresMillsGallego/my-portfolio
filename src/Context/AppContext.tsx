@@ -5,7 +5,7 @@ import ClaireDeLune from "../assets/audio/ClairDeLune.mp3";
 export const AppContextProvider = (props: { children: ReactNode }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showSplashPage, setShowSplashPage] = useState(true);
-  const [showPage, setShowPage] = useState(false);
+  const [showAboutMePage, setShowAboutMePage] = useState(false);
 
   const song = useMemo(() => {
     return new Audio(ClaireDeLune);
@@ -18,8 +18,8 @@ export const AppContextProvider = (props: { children: ReactNode }) => {
         setIsPlaying,
         showSplashPage,
         setShowSplashPage,
-        showPage,
-        setShowPage,
+        showAboutMePage,
+        setShowAboutMePage,
         song,
       }}
     >

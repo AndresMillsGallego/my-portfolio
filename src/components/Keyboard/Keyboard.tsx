@@ -5,10 +5,10 @@ import VolumeKnob from "./VolumeKnob/VolumeKnob";
 import { AppContext } from "../../Context/context";
 
 const Keyboard = () => {
-  const { setShowPage } = useContext(AppContext);
+  const { setShowAboutMePage } = useContext(AppContext);
 
   const handleEnterClick = () => {
-    setShowPage(true);
+    setShowAboutMePage(true);
   };
 
   return (
@@ -44,6 +44,7 @@ const Keyboard = () => {
           />
         </div>
         <div className={style["row"]}>
+          <Key content="," />
           <Key content="." />
           <Key content="/" />
           <Key

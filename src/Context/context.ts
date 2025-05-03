@@ -5,8 +5,8 @@ export interface AppContextProps {
   setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
   showSplashPage: boolean;
   setShowSplashPage: React.Dispatch<React.SetStateAction<boolean>>;
-  showPage: boolean;
-  setShowPage: React.Dispatch<React.SetStateAction<boolean>>;
+  showAboutMePage: boolean;
+  setShowAboutMePage: React.Dispatch<React.SetStateAction<boolean>>;
   song: HTMLAudioElement;
 }
 

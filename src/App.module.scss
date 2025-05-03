@@ -10,25 +10,3 @@ body {
   background-color: rgba(38, 60, 69, 0.623);
   overflow: hidden;
 }
-
-.page {
-  display: flex;
-  padding: 10rem 20rem;
-  column-gap: 1rem;
-
-  .me-div,
-  .content-div {
-    border: 2px solid;
-    border-radius: 10px;
-    max-width: 50%;
-  }
-  .me {
-    max-width: 100%;
-    border-radius: 10px;
-    height: 100%;
-  }
-
-  .content-div {
-    width: 50%;
-  }
-}
