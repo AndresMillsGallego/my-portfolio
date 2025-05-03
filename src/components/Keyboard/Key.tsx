@@ -6,10 +6,11 @@ interface KeyProps {
   variant?: "light" | "highlight";
   keyContainerClass?: string;
   onClick?: () => void;
+  title?: string;
 }
 
 const Key = (props: KeyProps) => {
-  const { content, variant, keyContainerClass, onClick } = props;
+  const { content, variant, keyContainerClass, onClick, title } = props;
   const keyVariantClass = variant ? variant : "default";
   const containerClass = keyContainerClass ? keyContainerClass : "";
 
@@ -21,6 +22,7 @@ const Key = (props: KeyProps) => {
       whileTap={{ scale: 0.95 }}
       className={`${style["key"]} ${style[keyVariantClass]} ${style[containerClass]}`}
       onClick={() => handleClick()}
+      title={title}
     >
       <span className={style["key-content"]}>{content}</span>
     </motion.div>

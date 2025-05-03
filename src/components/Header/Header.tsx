@@ -1,36 +1,16 @@
 import style from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../../Context/context";
-import { HeaderTitles } from "../../types/types";
 
 const Header = () => {
-  const { setShowSplashPage, setShowAboutMePage } = useContext(AppContext);
-  const [title, setTitle] = useState<string>(HeaderTitles.SOFTWARE_ENGINEER);
-  const [titles, setTitles] = useState<string[]>(Object.values(HeaderTitles));
-  const [animate, setAnimate] = useState<boolean>(true);
+  const { setShowSplashPage, setShowAboutMePage, title, animate, setAnimate } =
+    useContext(AppContext);
 
   const handleIconClick = () => {
     setShowSplashPage(true);
     setShowAboutMePage(false);
-  };
-
-  const handleTitleClick = () => {
-    if (animate) return;
-
-    const titleIndex = Math.floor(Math.random() * titles.length);
-    const selectedTitle = titles[titleIndex];
-    const filteredTitles = titles.filter(
-      (currentTitle) => currentTitle !== selectedTitle && currentTitle !== title
-    );
-    const updatedTitles = filteredTitles.length
-      ? filteredTitles
-      : Object.values(HeaderTitles);
-
-    setTitle(selectedTitle);
-    setTitles(updatedTitles);
-    setAnimate(true);
   };
 
   useEffect(() => {
@@ -39,7 +19,7 @@ const Header = () => {
         setAnimate(false);
       }, 2300);
     }
-  }, [animate]);
+  }, [animate, setAnimate]);
 
   return (
     <div className={style["header"]}>
@@ -56,7 +36,6 @@ const Header = () => {
               className={
                 animate ? style["animated-title"] : style["carat-only"]
               }
-              onClick={() => handleTitleClick()}
             >
               {title}
             </span>

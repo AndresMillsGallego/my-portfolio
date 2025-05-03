@@ -8,6 +8,10 @@ export interface AppContextProps {
   showAboutMePage: boolean;
   setShowAboutMePage: React.Dispatch<React.SetStateAction<boolean>>;
   song: HTMLAudioElement;
+  handleTitleChange: () => void;
+  title: string;
+  animate: boolean;
+  setAnimate: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const AppContext = createContext<AppContextProps>({} as AppContextProps);

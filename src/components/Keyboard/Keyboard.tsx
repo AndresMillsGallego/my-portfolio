@@ -5,7 +5,7 @@ import VolumeKnob from "./VolumeKnob/VolumeKnob";
 import { AppContext } from "../../Context/context";
 
 const Keyboard = () => {
-  const { setShowAboutMePage } = useContext(AppContext);
+  const { setShowAboutMePage, handleTitleChange } = useContext(AppContext);
 
   const handleEnterClick = () => {
     setShowAboutMePage(true);
@@ -51,6 +51,8 @@ const Keyboard = () => {
             variant="light"
             keyContainerClass="shift-key"
             content="⬆ shift"
+            onClick={handleTitleChange}
+            title="What else am I?"
           />
         </div>
       </div>
