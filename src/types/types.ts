@@ -5,4 +5,5 @@ export enum HeaderTitles {
   BUILDS = "Builds Stuff",
   CARPETNER = "Carpenter",
   WORLD_TRAVELER = "World Traveler",
+  MUSICIAN = "Musician",
 }
