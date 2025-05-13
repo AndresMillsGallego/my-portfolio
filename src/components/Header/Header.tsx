@@ -5,8 +5,14 @@ import { useContext, useEffect } from "react";
 import { AppContext } from "../../Context/context";
 
 const Header = () => {
-  const { setShowSplashPage, setShowAboutMePage, title, animate, setAnimate } =
-    useContext(AppContext);
+  const {
+    setShowSplashPage,
+    setShowAboutMePage,
+    title,
+    handleTitleChange,
+    animate,
+    setAnimate,
+  } = useContext(AppContext);
 
   const handleIconClick = () => {
     setShowSplashPage(true);
@@ -36,6 +42,7 @@ const Header = () => {
               className={
                 animate ? style["animated-title"] : style["carat-only"]
               }
+              onClick={handleTitleChange}
             >
               {title}
             </span>

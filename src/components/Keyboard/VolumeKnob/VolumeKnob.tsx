@@ -15,7 +15,9 @@ const VolumeKnob = () => {
     }
   };
 
-  song.addEventListener("ended", () => setIsPlaying(false));
+  song.addEventListener("ended", () => {
+    if (song.loop === false) setIsPlaying(false);
+  });
 
   useEffect(() => {
     if (startRecord) {

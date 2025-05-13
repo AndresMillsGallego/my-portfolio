@@ -2,7 +2,6 @@ import { useContext } from "react";
 import style from "./App.module.scss";
 import { AppContext } from "./Context/context";
 import Splash from "./Pages/Splash/Splash";
-import { AnimatePresence } from "motion/react";
 //import { Backdrop } from "@mui/material";
 import Header from "./components/Header/Header";
 import AboutMe from "./Pages/AboutMe/AboutMe";
@@ -26,7 +25,7 @@ function App() {
 
       {showSplashPage && !showAboutMePage ? <Splash /> : null}
 
-      <AnimatePresence>{showAboutMePage ? <AboutMe /> : null}</AnimatePresence>
+      {showAboutMePage ? <AboutMe /> : null}
     </div>
   );
 }

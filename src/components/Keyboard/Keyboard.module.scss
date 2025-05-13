@@ -2,9 +2,9 @@
   display: flex;
   align-items: flex-end;
   max-width: fit-content;
-  margin-left: 15rem;
-  margin-top: 10%;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 75px;
   border: 2px solid;
   border-radius: 75px;
   background-color: #3c3c3c;
@@ -113,6 +113,7 @@
 .key-content {
   position: relative;
   top: 17.5px;
+  right: 2px;
   z-index: 1;
   color: #fff;
   font-size: 0.75rem;
