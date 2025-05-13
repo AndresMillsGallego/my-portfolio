@@ -1,15 +1,25 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Key from "./Key";
 import style from "./Keyboard.module.scss";
 import VolumeKnob from "./VolumeKnob/VolumeKnob";
 import { AppContext } from "../../Context/context";
 
 const Keyboard = () => {
-  const { setShowAboutMePage, handleTitleChange } = useContext(AppContext);
+  const { setShowAboutMePage, handleTitleChange, song } =
+    useContext(AppContext);
+  const [shouldLoop, setShouldLoop] = useState<boolean>(false);
 
   const handleEnterClick = () => {
     setShowAboutMePage(true);
   };
+
+  const handleSongLoop = () => {
+    setShouldLoop(!shouldLoop);
+  };
+
+  useEffect(() => {
+    song.loop = shouldLoop;
+  }, [shouldLoop, song]);
 
   return (
     <div className={style["keyboard"]}>
@@ -18,7 +28,7 @@ const Keyboard = () => {
           <Key content="F9" />
           <Key content="F10" />
           <Key content="F11" />
-          <Key content="F12" />
+          <Key content="F12" title="song loop" onClick={handleSongLoop} />
           <VolumeKnob />
         </div>
         <div className={style["row"]}>
