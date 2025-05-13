@@ -73,7 +73,6 @@ const AboutMe = () => {
                   <SentimentSatisfiedIcon />
                 )
               }
-              onFocus={(event) => console.log("focused!", event)}
             />
             <BottomNavigationAction label="Skills" icon={<StarIcon />} />
             <BottomNavigationAction
