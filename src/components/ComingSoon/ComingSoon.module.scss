@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-top: 10%;
+  padding: 0 1.5rem;
+
+  .traffic-cone-icon {
+    font-size: 5rem;
+    color: #ff5f15;
+  }
+
+  .text-content-container {
+    height: 100%;
+    width: 75%;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    justify-content: space-between;
+
+    .text-content,
+    .text-coming-soon {
+      font-size: 1.5rem;
+    }
+
+    .text-coming-soon {
+      text-align: end;
+    }
+  }
+}

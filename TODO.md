@@ -8,4 +8,4 @@ Place to store my todo items for this protfolio
 - Add contact info
 - Add technologies / skills
 
-- Extract the nav code to it's own component
+- ~~Extract the nav code to it's own component~~

@@ -1,8 +1,8 @@
 import style from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect } from "react";
 import { AppContext } from "../../Context/context";
+import { mapIconToTitle } from "../../utils/headerUtils";
 
 const Header = () => {
   const {
@@ -31,10 +31,11 @@ const Header = () => {
     <div className={style["header"]}>
       <div className={style["header-title"]}>
         <FontAwesomeIcon
-          icon={faCode}
+          icon={mapIconToTitle(title)}
           onClick={() => handleIconClick()}
-          className={style["code-icon"]}
+          className={animate ? style["animated-code-icon"] : style["code-icon"]}
         />
+
         <div className={style["header-name"]}>
           <span>Andres Mills Gallego</span> <br />
           <div className={style["title"]}>
