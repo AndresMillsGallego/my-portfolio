@@ -1,20 +1,45 @@
-import { motion } from "motion/react";
 import style from "./AboutMe.module.scss";
 import MirrorMe from "../../assets/MirrorMe.jpg";
 import { AppContext } from "../../Context/context";
 import { useContext, useState } from "react";
-import { BottomNavigation, BottomNavigationAction } from "@mui/material";
-import ConstructionIcon from "@mui/icons-material/Construction";
-import StarIcon from "@mui/icons-material/Star";
-import ContactPageIcon from "@mui/icons-material/ContactPage";
-import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
-import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
+
+import Navigation from "../../components/Navigation/Navigation";
+import TextContent from "../../components/AboutMeComponents/TextContent/TextContent";
+import { AboutMeLabels } from "../../types/types";
+import Skills from "../../components/AboutMeComponents/Skills/Skills";
+import Projects from "../../components/AboutMeComponents/Projects/Projects";
+import Connect from "../../components/AboutMeComponents/Connect/Connect";
+import Adventure from "../../components/AboutMeComponents/Adventure/Adventure";
+import { motion } from "motion/react";
 
 const AboutMe = () => {
   const { setShowAboutMePage } = useContext(AppContext);
 
   const [navValue, setNavValue] = useState(0);
+
+  // const aboutMeNavLabels = Object.values(AboutMeLabels);
+
+  // const getAboutMeComponentIndex = (currentLabel: AboutMeLabels) => {
+  //   return aboutMeNavLabels.indexOf(currentLabel);
+  // };
+
+  const components = [
+    {
+      component: <TextContent label={AboutMeLabels.ABOUT_ME_TEXT} />,
+    },
+    {
+      component: <Skills label={AboutMeLabels.ABOUT_ME_SKILLS} />,
+    },
+    {
+      component: <Projects label={AboutMeLabels.ABOUT_ME_PROJECTS} />,
+    },
+    {
+      component: <Connect label={AboutMeLabels.ABOUT_ME_CONNECT} />,
+    },
+    {
+      component: <Adventure label={AboutMeLabels.ABOUT_ME_ADVENTURE} />,
+    },
+  ];
 
   return (
     <motion.div
@@ -33,61 +58,15 @@ const AboutMe = () => {
         >
           <img className={style["me"]} src={MirrorMe} alt="Its a meee Andres" />
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           className={style["content-div"]}
         >
-          <div className={style["about-me-container"]}>
-            <h2 className={style["about-me-header"]}>Hi, I'm Andres</h2>
-            <p className={style["about-me-content"]}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-              aspernatur cum delectus soluta autem dignissimos eaque atque
-              eveniet ea, voluptatum aliquam odio dolorem cupiditate id, sit ut
-              sint voluptas quis. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Quae aspernatur cum delectus soluta autem
-              dignissimos eaque atque eveniet ea, voluptatum aliquam odio
-              dolorem cupiditate id, sit ut sint voluptas quis. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Vitae cum nobis
-              maiores ratione eos quas repellendus dolorum! Sint libero sit a.
-              Veniam necessitatibus commodi saepe blanditiis. Accusantium
-              commodi in repellendus? Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Molestiae quasi officia debitis voluptates,
-              animi nulla molestias soluta voluptatem omnis, aliquid beatae
-              alias harum! Deserunt, dolorem corrupti. Non ad veniam vel.
-            </p>
-          </div>
-          <BottomNavigation
-            className={style["background-nav"]}
-            showLabels
-            value={navValue}
-            onChange={(event, newValue) => setNavValue(newValue)}
-          >
-            <BottomNavigationAction
-              label="About Me"
-              icon={
-                navValue === 0 ? (
-                  <SentimentVerySatisfiedIcon />
-                ) : (
-                  <SentimentSatisfiedIcon />
-                )
-              }
-            />
-            <BottomNavigationAction label="Skills" icon={<StarIcon />} />
-            <BottomNavigationAction
-              label="Projects"
-              icon={<ConstructionIcon />}
-            />
-            <BottomNavigationAction
-              label="Connect"
-              icon={<ContactPageIcon />}
-            />
-            <BottomNavigationAction
-              label="Adventure"
-              icon={<TravelExploreIcon />}
-            />
-          </BottomNavigation>
+          {components[navValue].component}
+          <Navigation navValue={navValue} setNavValue={setNavValue} />
         </motion.div>
       </div>
     </motion.div>
