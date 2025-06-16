@@ -9,6 +9,8 @@ export interface AppContextProps {
   setShowAboutMePage: React.Dispatch<React.SetStateAction<boolean>>;
   song: HTMLAudioElement;
   handleTitleChange: () => void;
+  handlePlayPause: () => void;
+  handleSongLoop: () => void;
   title: string;
   animate: boolean;
   setAnimate: React.Dispatch<React.SetStateAction<boolean>>;

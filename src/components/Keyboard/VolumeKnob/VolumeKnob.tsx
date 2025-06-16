@@ -1,36 +1,16 @@
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import style from "./VolumeKnob.module.scss";
 import { AppContext } from "../../../Context/context";
 
 const VolumeKnob = () => {
-  const { isPlaying, setIsPlaying, song } = useContext(AppContext);
-
-  const startRecord = isPlaying;
-
-  const handleClick = () => {
-    setIsPlaying(!isPlaying);
-
-    if (isPlaying) {
-      song.pause();
-    }
-  };
-
-  song.addEventListener("ended", () => {
-    if (song.loop === false) setIsPlaying(false);
-  });
-
-  useEffect(() => {
-    if (startRecord) {
-      song.play();
-    }
-  }, [song, startRecord]);
+  const { isPlaying, handlePlayPause } = useContext(AppContext);
 
   return (
     <div
       className={`${style["volume-div"]} ${
         style[isPlaying ? "record-playing" : ""]
       }`}
-      onClick={() => handleClick()}
+      onClick={() => handlePlayPause()}
       title="Play me 🎶"
     ></div>
   );

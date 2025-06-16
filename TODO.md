@@ -6,6 +6,8 @@ Place to store my todo items for this protfolio
   - Possibly have each country clickable? 05/12/25 look into react-globe library
 - Add CV / Resume
 - Add contact info
-- Add technologies / skills
+- ~~Add song controls to context to allow for song control throughout the app~~
+- Add animation to the skills icons
 
+- ~~Add technologies / skills~~
 - ~~Extract the nav code to it's own component~~
