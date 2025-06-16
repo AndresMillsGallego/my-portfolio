@@ -7,7 +7,25 @@
   backdrop-filter: blur(15px);
   z-index: 10;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  .right-header-div {
+    display: flex;
+    margin-right: 1.5rem;
+
+    .song-controls-div {
+      border-right: 2px solid;
+      margin-right: 1rem;
+      padding-right: 0.25rem;
+    }
+
+    .home-icon {
+      font-size: 2rem;
+      color: azure;
+      cursor: pointer;
+    }
+  }
 }
 
 .header-title {

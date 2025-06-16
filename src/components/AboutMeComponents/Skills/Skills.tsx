@@ -21,14 +21,20 @@ const Skills = (props: AboutMeContentProps) => {
   const SkillIcon = (props: SkillIconProps) => {
     const { title, Icon, iconProps } = props.iconData;
 
+    const defaultClassNames = `${style["skill-icon"]} ${
+      style[`${title.toLowerCase()}-icon`]
+    }`;
+
     const iconClassName = iconProps.className
-      ? `${style["skill-icon"]} ${style[iconProps.className]}`
-      : style["skill-icon"];
+      ? `${defaultClassNames} ${style[iconProps.className]}`
+      : defaultClassNames;
 
     return (
-      <Tooltip title={title} slots={{ transition: Fade }} placement="top">
-        <Icon className={iconClassName} color={iconProps.color} />
-      </Tooltip>
+      <div className={style["skill-icon-container"]}>
+        <Tooltip title={title} slots={{ transition: Fade }} placement="top">
+          <Icon className={iconClassName} color={iconProps.color} />
+        </Tooltip>
+      </div>
     );
   };
 

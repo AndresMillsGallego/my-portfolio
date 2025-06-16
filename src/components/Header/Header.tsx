@@ -3,10 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useEffect } from "react";
 import { AppContext } from "../../Context/context";
 import { mapIconToTitle } from "../../utils/headerUtils";
+import SongControls from "../SongControls/SongControls";
+import { AnimatePresence, motion } from "motion/react";
+import { TbHomeHeart } from "react-icons/tb";
 
 const Header = () => {
   const {
     setShowSplashPage,
+    showAboutMePage,
     setShowAboutMePage,
     title,
     handleTitleChange,
@@ -49,6 +53,24 @@ const Header = () => {
             </span>
           </div>
         </div>
+      </div>
+      <div className={style["right-header-div"]}>
+        <AnimatePresence>
+          {showAboutMePage ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              className={style["song-controls-div"]}
+            >
+              <SongControls />
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+        <TbHomeHeart
+          className={style["home-icon"]}
+          onClick={() => handleIconClick()}
+        />
       </div>
     </div>
   );
