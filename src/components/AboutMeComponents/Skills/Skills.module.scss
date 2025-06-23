@@ -16,13 +16,36 @@
   .skill-icon-container {
     perspective: 1000px;
 
-    .skill-icon:hover {
-      scale: 1.1;
+    .skill-icon-inner-container {
+      height: 5rem;
+      width: 5rem;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .skill-icon-front,
+    .skill-icon-back {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+      cursor: pointer;
+    }
+
+    .skill-icon-back {
+      transform: rotateY(180deg);
     }
   }
 
   .react-icon {
-    animation: spin infinite 10s linear;
+    animation: spin infinite 8s linear;
+  }
+
+  .react-icon:hover {
+    animation-duration: 4s;
   }
 
   @keyframes spin {
