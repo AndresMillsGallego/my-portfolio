@@ -12,6 +12,8 @@ const SkillIcon = (props: SkillIconProps) => {
   const { title, Icon, iconProps } = props.iconData;
 
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const [isTilted, setIsTilted] = useState<boolean>(false);
+  const isJiraIcon = title === 'Jira'
 
   const defaultClassNames = `${style["skill-icon"]} ${
     style[`${title.toLowerCase()}-icon`]
@@ -21,16 +23,26 @@ const SkillIcon = (props: SkillIconProps) => {
     ? `${defaultClassNames} ${style[iconProps.className]}`
     : defaultClassNames;
 
+ 
+      setInterval(() => {
+        if (isJiraIcon) {
+          setIsTilted(!isTilted)
+        }
+        setIsFlipped(!isFlipped)
+      }, iconProps.intervalDuration)
+
+    
+   
+
   return (
     <div
       className={style["skill-icon-container"]}
-      onClick={() => setIsFlipped(!isFlipped)}
     >
       <Tooltip title={title} slots={{ transition: Fade }} placement="top">
         <motion.div
           className={style["skill-icon-inner-container"]}
           initial={false}
-          animate={{ rotateY: isFlipped ? 180 : 0 }}
+          animate={{ rotateY: isFlipped ? 180 : 0, rotate: isJiraIcon && isTilted ? 45 : 0 }}
           transition={{ duration: 0.65, ease: "easeInOut" }}
         >
           <motion.div className={style["skill-icon-front"]}>

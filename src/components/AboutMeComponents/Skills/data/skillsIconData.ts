@@ -14,6 +14,7 @@ export interface SkillIconData {
     className?: string;
     primaryColor: string;
     secondaryColor: string;
+    intervalDuration: number;
   };
 }
 
@@ -24,6 +25,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "#3178c6",
       secondaryColor: "#00273f",
+      intervalDuration: 12000
     },
   },
   {
@@ -32,6 +34,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "#e34c26",
       secondaryColor: "#f06529",
+      intervalDuration: 8000
     },
   },
   {
@@ -40,6 +43,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "#0081a3",
       secondaryColor: "#00d8ff",
+      intervalDuration: 17000
     },
   },
   {
@@ -48,6 +52,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "#000000",
       secondaryColor: "#6e5494",
+      intervalDuration: 5000
     },
   },
   {
@@ -56,6 +61,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "#007396",
       secondaryColor: "#ED8B00",
+      intervalDuration: 20000
     },
   },
   {
@@ -64,6 +70,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "#e535ab",
       secondaryColor: "#FFFFFF",
+      intervalDuration: 7000
     },
   },
   {
@@ -72,6 +79,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "#264de4",
       secondaryColor: "#663399",
+      intervalDuration: 13000
     },
   },
   {
@@ -80,6 +88,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "#6db33f",
       secondaryColor: "#FFFFFF",
+      intervalDuration: 10000
     },
   },
   {
@@ -88,6 +97,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "F1502F",
       secondaryColor: "#3d2d00",
+      intervalDuration: 17000
     },
   },
   {
@@ -96,6 +106,7 @@ export const skillsIconsData: SkillIconData[] = [
     iconProps: {
       primaryColor: "#2684ff",
       secondaryColor: "#253858",
+      intervalDuration: 20000
     },
   },
 ];
