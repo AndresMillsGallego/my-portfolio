@@ -12,7 +12,8 @@ export interface SkillIconData {
   Icon: IconType;
   iconProps: {
     className?: string;
-    color: string;
+    primaryColor: string;
+    secondaryColor: string;
   };
 }
 
@@ -21,70 +22,80 @@ export const skillsIconsData: SkillIconData[] = [
     title: "TypeScript",
     Icon: TbBrandTypescript,
     iconProps: {
-      color: "#3178c6",
+      primaryColor: "#3178c6",
+      secondaryColor: "#00273f",
     },
   },
   {
     title: "HTML",
     Icon: TiHtml5,
     iconProps: {
-      color: "#e34c26",
+      primaryColor: "#e34c26",
+      secondaryColor: "#f06529",
     },
   },
   {
     title: "React",
     Icon: FaReact,
     iconProps: {
-      color: "#0081a3",
+      primaryColor: "#0081a3",
+      secondaryColor: "#00d8ff",
     },
   },
   {
     title: "GitHub",
     Icon: FaSquareGithub,
     iconProps: {
-      color: "#000000",
-    },
-  },
-  {
-    title: "CSS",
-    Icon: DiCss3,
-    iconProps: {
-      color: "#264de4",
-    },
-  },
-  {
-    title: "GraphQL",
-    Icon: GrGraphQl,
-    iconProps: {
-      color: "#e535ab",
+      primaryColor: "#000000",
+      secondaryColor: "#6e5494",
     },
   },
   {
     title: "Java",
     Icon: FaJava,
     iconProps: {
-      color: "#007396",
+      primaryColor: "#007396",
+      secondaryColor: "#ED8B00",
+    },
+  },
+  {
+    title: "GraphQL",
+    Icon: GrGraphQl,
+    iconProps: {
+      primaryColor: "#e535ab",
+      secondaryColor: "#FFFFFF",
+    },
+  },
+  {
+    title: "CSS",
+    Icon: DiCss3,
+    iconProps: {
+      primaryColor: "#264de4",
+      secondaryColor: "#663399",
     },
   },
   {
     title: "Springboot",
     Icon: BiLogoSpringBoot,
     iconProps: {
-      color: "#6db33f",
+      primaryColor: "#6db33f",
+      secondaryColor: "#FFFFFF",
     },
   },
   {
     title: "Git",
     Icon: FaGitSquare,
     iconProps: {
-      color: "#3d2d00",
+      primaryColor: "F1502F",
+      secondaryColor: "#3d2d00",
     },
   },
   {
     title: "Jira",
     Icon: FaJira,
     iconProps: {
-      color: "#2684ff",
+      primaryColor: "#2684ff",
+      secondaryColor: "#253858",
     },
   },
 ];
