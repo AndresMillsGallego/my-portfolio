@@ -16,6 +16,9 @@ const Keyboard = () => {
     <div className={style["keyboard"]}>
       <div className={style["keyboard-left"]}>
         <div className={style["volume-row"]}>
+          <div className={style["f8-key-container"]}>
+            <Key content="F8" />
+          </div>
           <Key content="F9" />
           <Key content="F10" />
           <Key content="F11" />
@@ -23,6 +26,8 @@ const Keyboard = () => {
           <VolumeKnob />
         </div>
         <div className={style["row"]}>
+          <Key content="8" />
+          <Key content="9" />
           <Key content="0" />
           <Key content="-" />
           <Key content="+" />
@@ -34,6 +39,7 @@ const Keyboard = () => {
         </div>
 
         <div className={style["row"]}>
+          <Key content="K" />
           <Key content="L" />
           <Key content=";" />
           <Key content='"' />
@@ -45,6 +51,7 @@ const Keyboard = () => {
           />
         </div>
         <div className={style["row"]}>
+          <Key content="M" />
           <Key content="," />
           <Key content="." />
           <Key content="/" />
