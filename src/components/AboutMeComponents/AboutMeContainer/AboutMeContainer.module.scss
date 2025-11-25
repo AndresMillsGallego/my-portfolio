@@ -1,3 +1,27 @@
+.about-me-header {
+  margin-top: 0;
+}
+
 .about-me-content {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: rgba(119, 165, 173, 0.801);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  height: 30rem;
   overflow-y: auto;
+}
+
+@media screen and (max-width: 1720px) {
+  .about-me-content {
+    max-height: 22.5rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .about-me-content {
+    max-height: 17.5rem;
+    font-size: 1rem;
+  }
 }

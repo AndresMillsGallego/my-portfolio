@@ -1,5 +1,24 @@
 .navigation-container {
   .navigation {
     background-color: inherit;
+
+    .nav-icon {
+      color: black;
+      font-size: 2.5rem;
+    }
+
+    :global(.Mui-selected, .MuiSvgIcon-root) {
+      color: pink;
+    }
+
+    :global(.Mui-selected) {
+      color: pink;
+    }
+
+    @media (max-width: 1400px) {
+      .nav-icon {
+        font-size: 1.5rem;
+      }
+    }
   }
 }

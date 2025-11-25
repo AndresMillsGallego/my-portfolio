@@ -21,24 +21,33 @@ const Navigation = (props: NavigationProps) => {
         showLabels
         className={style["navigation"]}
         value={navValue}
-        onChange={(event, newValue) => setNavValue(newValue)}
+        onChange={(_event, newValue) => setNavValue(newValue)}
       >
         <BottomNavigationAction
           label="About Me"
           icon={
             navValue === 0 ? (
-              <SentimentVerySatisfiedIcon />
+              <SentimentVerySatisfiedIcon className={style["nav-icon"]} />
             ) : (
-              <SentimentSatisfiedIcon />
+              <SentimentSatisfiedIcon className={style["nav-icon"]} />
             )
           }
         />
-        <BottomNavigationAction label="Skills" icon={<StarIcon />} />
-        <BottomNavigationAction label="Projects" icon={<ConstructionIcon />} />
-        <BottomNavigationAction label="Connect" icon={<ContactPageIcon />} />
+        <BottomNavigationAction
+          label="Skills"
+          icon={<StarIcon className={style["nav-icon"]} />}
+        />
+        <BottomNavigationAction
+          label="Projects"
+          icon={<ConstructionIcon className={style["nav-icon"]} />}
+        />
+        <BottomNavigationAction
+          label="Connect"
+          icon={<ContactPageIcon className={style["nav-icon"]} />}
+        />
         <BottomNavigationAction
           label="Adventure"
-          icon={<TravelExploreIcon />}
+          icon={<TravelExploreIcon className={style["nav-icon"]} />}
         />
       </BottomNavigation>
     </div>
