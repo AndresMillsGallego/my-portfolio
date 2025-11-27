@@ -16,6 +16,12 @@
     font-size: 6rem;
   }
 
+  @media screen and (max-width: 1725px) {
+    .skill-icon {
+      font-size: 4.5rem;
+    }
+  }
+
   @media screen and (max-width: 1400px) {
     .skill-icon {
       font-size: 3rem;
@@ -64,5 +70,61 @@
     to {
       transform: rotate(360deg);
     }
+  }
+}
+
+.skill-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .skill-modal-card {
+    width: 40rem;
+    background-color: rgb(243, 235, 218);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .skill-modal-card-heading {
+    border-bottom: 1px solid;
+
+    .skill-modal-card-header-title-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .skill-modal-card-header-title {
+      border-left: 1px solid;
+      padding-left: 1rem;
+      margin: 0;
+      margin-left: 0.25rem;
+    }
+
+    .modal-close-button {
+      cursor: pointer;
+    }
+  }
+
+  .content-list-item {
+    margin-bottom: 1rem;
+  }
+
+  .skill-modal-card-content,
+  .skill-modal-card-actions {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .skill-modal-card {
+    overflow-y: auto;
+  }
+
+  .skill-modal-card-content-heading {
+    font-size: 0.9rem;
+  }
+
+  .content-list {
+    font-size: 0.8rem;
   }
 }

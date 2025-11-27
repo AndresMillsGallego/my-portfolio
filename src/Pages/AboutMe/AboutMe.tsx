@@ -34,10 +34,10 @@ const AboutMe = () => {
       component: <Projects label={AboutMeLabels.ABOUT_ME_PROJECTS} />,
     },
     {
-      component: <Connect label={AboutMeLabels.ABOUT_ME_CONNECT} />,
+      component: <Adventure label={AboutMeLabels.ABOUT_ME_ADVENTURE} />,
     },
     {
-      component: <Adventure label={AboutMeLabels.ABOUT_ME_ADVENTURE} />,
+      component: <Connect label={AboutMeLabels.ABOUT_ME_CONNECT} />,
     },
   ];
 

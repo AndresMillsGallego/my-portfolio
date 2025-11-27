@@ -42,12 +42,12 @@ const Navigation = (props: NavigationProps) => {
           icon={<ConstructionIcon className={style["nav-icon"]} />}
         />
         <BottomNavigationAction
-          label="Connect"
-          icon={<ContactPageIcon className={style["nav-icon"]} />}
-        />
-        <BottomNavigationAction
           label="Adventure"
           icon={<TravelExploreIcon className={style["nav-icon"]} />}
+        />
+        <BottomNavigationAction
+          label="Connect"
+          icon={<ContactPageIcon className={style["nav-icon"]} />}
         />
       </BottomNavigation>
     </div>
