@@ -14,9 +14,8 @@ export const splitSkillsArray = (skills: SkillIconData[]) => {
 };
 
 export const shuffleSkills = (skills: SkillIconData[]) => {
-  for (let i = skills.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [skills[i], skills[j]] = [skills[j], skills[i]];
-  }
-  return skills;
+  const combinedSkills = skills.flat();
+  const shuffledSkills = combinedSkills.sort(() => Math.random() - 0.5);
+
+  return splitSkillsArray(shuffledSkills);
 };

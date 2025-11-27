@@ -1,3 +1,44 @@
+.about-me-header {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
 .about-me-content {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: rgba(119, 165, 173, 0.801);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  height: 35rem;
   overflow-y: auto;
+}
+
+@media screen and (max-width: 1720px) {
+  .about-me-header {
+    font-size: 1.75rem;
+  }
+
+  .about-me-content {
+    max-height: 25rem;
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .about-me-header {
+    font-size: 1.5rem;
+  }
+
+  .about-me-content {
+    max-height: 20rem;
+    font-size: 0.9rem;
+  }
+}
+
+.stack-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
