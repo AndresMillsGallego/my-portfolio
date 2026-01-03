@@ -1,0 +1,22 @@
+.about-me-paragraph {
+  margin-left: 1rem;
+}
+
+.title-component {
+  margin: 0 8px;
+
+  .skeleton {
+    width: 7rem;
+  }
+
+  .title {
+    display: inline-block;
+    color: rgb(2, 77, 152);
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.title-string {
+  display: flex;
+}

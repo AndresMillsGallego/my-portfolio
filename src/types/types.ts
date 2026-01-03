@@ -1,7 +1,7 @@
 export enum HeaderTitleLabels {
   SOFTWARE_ENGINEER = "Software Engineer",
   WEB_DEVELOPER = "Web Developer",
-  BUILDS = "Builds Stuff",
+  CRAFTSMAN = "Craftsman",
   CARPETNER = "Carpenter",
   WORLD_TRAVELER = "World Traveler",
   MUSICIAN = "Musician",

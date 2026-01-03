@@ -25,14 +25,13 @@ const Connect = (props: AboutMeContentProps) => {
   }, [animateIcons, controls]);
 
   return (
-    <AboutMeContainer heading={`Let's connect!`} aria-label={label}>
+    <AboutMeContainer aria-label={label}>
       <div className={style["stack-container"]} aria-disabled={animateIcons}>
         <Stack
-          direction="row"
-          spacing={10}
+          direction="column"
+          spacing={5}
           divider={
             <Divider
-              className={style["divider"]}
               orientation="vertical"
               sx={{ borderColor: "black", borderWidth: "1px" }}
               flexItem
@@ -43,7 +42,7 @@ const Connect = (props: AboutMeContentProps) => {
             <Link href="https://github.com/AndresMillsGallego" target="_blank">
               <FontAwesomeIcon
                 icon={faGithub}
-                size="4x"
+                size="2x"
                 color="black"
                 bounce={animateIcons}
               />
@@ -56,7 +55,7 @@ const Connect = (props: AboutMeContentProps) => {
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
-                size="4x"
+                size="2x"
                 color="#0077B5"
                 shake={animateIcons}
               />
@@ -68,7 +67,7 @@ const Connect = (props: AboutMeContentProps) => {
               className={style["gmail-link-container"]}
             >
               <Link href="mailto:andresmillswork@gmail.com" target="_blank">
-                <SiGmail size={80} color="#c71610" />
+                <SiGmail size={25} color="#c71610" />
               </Link>
             </motion.div>
           </Tooltip>

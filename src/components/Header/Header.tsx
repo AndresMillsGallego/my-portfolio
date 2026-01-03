@@ -36,7 +36,7 @@ const Header = () => {
       <div className={style["header-title"]}>
         <FontAwesomeIcon
           icon={mapIconToTitle(title)}
-          onClick={() => handleIconClick()}
+          onClick={handleTitleChange}
           className={animate ? style["animated-code-icon"] : style["code-icon"]}
         />
 
