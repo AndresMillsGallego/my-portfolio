@@ -11,7 +11,7 @@ import { HeaderTitleLabels } from "../types/types";
 
 const headerTitleIconMap = {
   [HeaderTitleLabels.SOFTWARE_ENGINEER]: faCode,
-  [HeaderTitleLabels.BUILDS]: faTools,
+  [HeaderTitleLabels.CRAFTSMAN]: faTools,
   [HeaderTitleLabels.CARPETNER]: faHammer,
   [HeaderTitleLabels.WEB_DEVELOPER]: faLaptopCode,
   [HeaderTitleLabels.WORLD_TRAVELER]: faEarthAmericas,
