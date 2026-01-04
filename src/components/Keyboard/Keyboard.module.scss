@@ -63,6 +63,10 @@
   background: linear-gradient(180deg, #282828, #202020);
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.795), 10px 20px 25px;
   overflow: hidden;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .key::before {

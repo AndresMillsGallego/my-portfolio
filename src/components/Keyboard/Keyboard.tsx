@@ -1,19 +1,46 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Key from "./Key";
 import style from "./Keyboard.module.scss";
 import VolumeKnob from "./VolumeKnob/VolumeKnob";
 import { AppContext } from "../../Context/context";
+import { motion } from "motion/react";
+import { KeyValues, TiltValues } from "../../types/types";
+import { defaultTiltValues, getTiltValue } from "../../utils/keyboardUtils";
 
 const Keyboard = () => {
   const { setShowAboutMePage, handleTitleChange, handleSongLoop } =
     useContext(AppContext);
+
+  const [tilt, setTilt] = useState<TiltValues>(defaultTiltValues);
+
+  useEffect(() => {
+    const onKeyDown = (event: { key: string }) => {
+      const keyName = event.key;
+      setTilt(getTiltValue(keyName));
+    };
+    const onKeyUp = () =>
+      setTilt({ x: 0, y: 0, shadow: "0px 5px 10px rgba(0,0,0,0.2)" });
+
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keyup", onKeyUp);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("keyup", onKeyUp);
+    };
+  }, []);
 
   const handleEnterClick = () => {
     setShowAboutMePage(true);
   };
 
   return (
-    <div className={style["keyboard"]}>
+    <motion.div
+      className={style["keyboard"]}
+      style={{ perspective: 1000 }}
+      animate={{ rotateX: tilt.x, rotateY: tilt.y, boxShadow: tilt.shadow }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    >
       <div className={style["keyboard-left"]}>
         <div className={style["volume-row"]}>
           <div className={style["f8-key-container"]}>
@@ -22,7 +49,12 @@ const Keyboard = () => {
           <Key content="F9" />
           <Key content="F10" />
           <Key content="F11" />
-          <Key content="F12" title="song loop" onClick={handleSongLoop} />
+          <Key
+            isActionKey
+            content="F12"
+            title="Loop song"
+            onClick={handleSongLoop}
+          />
           <VolumeKnob />
         </div>
         <div className={style["row"]}>
@@ -44,6 +76,7 @@ const Keyboard = () => {
           <Key content=";" />
           <Key content='"' />
           <Key
+            isActionKey
             variant="highlight"
             keyContainerClass="enter-key"
             content="⏎ enter"
@@ -56,6 +89,7 @@ const Keyboard = () => {
           <Key content="." />
           <Key content="/" />
           <Key
+            isActionKey
             variant="light"
             keyContainerClass="shift-key"
             content="⬆ shift"
@@ -72,16 +106,36 @@ const Keyboard = () => {
         </div>
         <div>
           <div className={style["row"]}>
-            <Key content="🡁" />
+            <Key
+              isActionKey
+              content="🡁"
+              onMouseDown={() => setTilt(getTiltValue(KeyValues.ARROW_UP))}
+              onMouseUp={() => setTilt(defaultTiltValues)}
+            />
           </div>
           <div className={style["row"]}>
-            <Key content="🡀" />
-            <Key content="🡃" />
-            <Key content="🡂" />
+            <Key
+              isActionKey
+              content="🡀"
+              onMouseDown={() => setTilt(getTiltValue(KeyValues.ARROW_LEFT))}
+              onMouseUp={() => setTilt(defaultTiltValues)}
+            />
+            <Key
+              isActionKey
+              content="🡃"
+              onMouseDown={() => setTilt(getTiltValue(KeyValues.ARROW_DOWN))}
+              onMouseUp={() => setTilt(defaultTiltValues)}
+            />
+            <Key
+              isActionKey
+              content="🡂"
+              onMouseDown={() => setTilt(getTiltValue(KeyValues.ARROW_RIGHT))}
+              onMouseUp={() => setTilt(defaultTiltValues)}
+            />
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

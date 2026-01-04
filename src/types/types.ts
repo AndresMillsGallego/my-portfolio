@@ -14,3 +14,17 @@ export enum AboutMeLabels {
   ABOUT_ME_CONNECT = "Connect with me",
   ABOUT_ME_ADVENTURE = "My adventures",
 }
+
+export enum KeyValues {
+  ARROW_UP = "ArrowUp",
+  ARROW_DOWN = "ArrowDown",
+  ARROW_LEFT = "ArrowLeft",
+  ARROW_RIGHT = "ArrowRight",
+  DEFAULT = "",
+}
+
+export interface TiltValues {
+  x: number;
+  y: number;
+  shadow: string;
+}
