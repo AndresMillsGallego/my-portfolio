@@ -11,6 +11,7 @@ const Splash = () => {
       <motion.div
         drag
         dragConstraints={constraintsRef}
+        style={{ perspective: 1000 }}
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
       >
