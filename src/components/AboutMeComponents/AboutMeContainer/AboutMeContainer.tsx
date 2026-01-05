@@ -17,7 +17,7 @@ const AboutMeContainer = (props: AboutMeContainerProps) => {
         exit={{ opacity: 0, scale: 0 }}
         className={style["content-div"]}
       >
-        <div className={style["about-me-content"]}>{children}</div>
+        {children}
       </motion.div>
     </AnimatePresence>
   );

@@ -32,7 +32,7 @@ const Key = (props: KeyProps) => {
       whileHover={
         isActionKey ? { scale: 1.025, outline: "2px solid #00ff00" } : {}
       }
-      whileTap={isActionKey ? { scale: 0.95 } : {}}
+      whileTap={{ scale: 0.95 }}
       className={`${style["key"]} ${style[keyVariantClass]} ${style[containerClass]}`}
       onClick={handleClick}
       title={title}

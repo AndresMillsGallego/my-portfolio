@@ -13,10 +13,13 @@
     display: inline-block;
     color: rgb(2, 77, 152);
     font-weight: bold;
-    cursor: pointer;
   }
 }
 
 .title-string {
   display: flex;
+}
+
+.header {
+  margin-top: 0;
 }

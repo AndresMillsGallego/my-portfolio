@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import Key from "./Key";
 import style from "./Keyboard.module.scss";
 import VolumeKnob from "./VolumeKnob/VolumeKnob";
@@ -8,15 +8,27 @@ import { KeyValues, TiltValues } from "../../types/types";
 import { defaultTiltValues, getTiltValue } from "../../utils/keyboardUtils";
 
 const Keyboard = () => {
-  const { setShowAboutMePage, handleTitleChange, handleSongLoop } =
+  const { setShowAboutMePage, handleTitleChange, handleSongLoop, animate } =
     useContext(AppContext);
 
   const [tilt, setTilt] = useState<TiltValues>(defaultTiltValues);
 
+  const handleEnterClick = useCallback(() => {
+    setShowAboutMePage(true);
+  }, [setShowAboutMePage]);
+
   useEffect(() => {
     const onKeyDown = (event: { key: string }) => {
       const keyName = event.key;
+      console.log("Key name", keyName);
       setTilt(getTiltValue(keyName));
+
+      if (keyName === KeyValues.ENTER) {
+        handleEnterClick();
+      } else if (keyName === KeyValues.SHIFT && !animate) {
+        console.log("yo");
+        handleTitleChange();
+      }
     };
     const onKeyUp = () =>
       setTilt({ x: 0, y: 0, shadow: "0px 5px 10px rgba(0,0,0,0.2)" });
@@ -28,11 +40,7 @@ const Keyboard = () => {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("keyup", onKeyUp);
     };
-  }, []);
-
-  const handleEnterClick = () => {
-    setShowAboutMePage(true);
-  };
+  }, [animate, handleEnterClick, handleTitleChange]);
 
   return (
     <motion.div

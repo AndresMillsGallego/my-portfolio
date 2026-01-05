@@ -7,7 +7,7 @@ import style from "./TextContent.module.scss";
 
 const TextContent = (props: AboutMeContentProps) => {
   const { label } = props;
-  const { animate, title, handleTitleChange } = useContext(AppContext);
+  const { animate, title } = useContext(AppContext);
 
   const Title = () => {
     return (
@@ -15,9 +15,7 @@ const TextContent = (props: AboutMeContentProps) => {
         {animate ? (
           <Skeleton className={style["skeleton"]} />
         ) : (
-          <span className={style["title"]} onClick={handleTitleChange}>
-            {title.toLowerCase()}
-          </span>
+          <span className={style["title"]}>{title.toLowerCase()}</span>
         )}
       </div>
     );
@@ -25,19 +23,21 @@ const TextContent = (props: AboutMeContentProps) => {
 
   return (
     <AboutMeContainer aria-label={label}>
-      <h2>Hi, I'm Andres</h2>
+      <h2 className={style["header"]}>Hi, I'm Andres</h2>
       <div className={style["about-me-paragraph"]}>
         <span className={style["title-string"]}>
           I'm a <Title /> who simply loves to build things.
-        </span>{" "}
+        </span>
+      </div>
+      <p className={style["about-me-paragraph"]}>
         Whether it's a complex application or a weekend project, I enjoy the
         process of creating something functional from scratch.
-      </div>
+      </p>
       <p className={style["about-me-paragraph"]}>
         When not at work, my favorite way to spend time is exploring the world
         and enjoying music with my family. Whether we are traveling to new
         places or sharing our favorite songs, we are always looking for our next
-        adventure
+        adventure.
       </p>
     </AboutMeContainer>
   );
