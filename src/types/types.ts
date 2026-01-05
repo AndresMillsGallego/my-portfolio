@@ -21,6 +21,8 @@ export enum KeyValues {
   ARROW_LEFT = "ArrowLeft",
   ARROW_RIGHT = "ArrowRight",
   DEFAULT = "",
+  ENTER = "Enter",
+  SHIFT = "Shift",
 }
 
 export interface TiltValues {

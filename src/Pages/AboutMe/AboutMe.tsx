@@ -1,7 +1,6 @@
 import style from "./AboutMe.module.scss";
 import MirrorMe from "../../assets/MirrorMe.jpg";
-import { AppContext } from "../../Context/context";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 import TextContent from "../../components/AboutMeComponents/TextContent/TextContent";
 
@@ -13,8 +12,6 @@ import Connect from "../../components/AboutMeComponents/Connect/Connect";
 import Navigation from "../../components/Navigation/Navigation";
 
 const AboutMe = () => {
-  const { setShowAboutMePage } = useContext(AppContext);
-
   const [navValue, setNavValue] = useState(0);
 
   return (
@@ -25,13 +22,16 @@ const AboutMe = () => {
       className={style["page-container"]}
     >
       <div className={style["page"]}>
-        <Grid container spacing={2}>
+        <Grid
+          container
+          spacing={2}
+          className={style["about-me-grid-container"]}
+        >
           <Grid size={4}>
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0 }}
-              onClick={() => setShowAboutMePage(false)}
               className={style["me-div"]}
             >
               <img
@@ -41,30 +41,29 @@ const AboutMe = () => {
               />
             </motion.div>
           </Grid>
-          <Grid size={8}>
-            <Stack spacing={2}>
-              <div className={style["about-me-stack"]}>
-                <div className={style["about-me-first-row"]}>
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0 }}
-                    className={style["about-me-div"]}
-                  >
-                    <TextContent label={AboutMeLabels.ABOUT_ME_TEXT} />
-                  </motion.div>
+          <Grid size={8} className={style["about-me-column"]}>
+            <Stack spacing={2} className={style["about-me-stack"]}>
+              <div className={style["about-me-first-row"]}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  className={style["about-me-div"]}
+                >
+                  <TextContent label={AboutMeLabels.ABOUT_ME_TEXT} />
+                </motion.div>
 
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0 }}
-                    className={style["connect-div"]}
-                  >
-                    <Connect label={AboutMeLabels.ABOUT_ME_CONNECT} />
-                  </motion.div>
-                </div>
-                <Navigation navValue={navValue} setNavValue={setNavValue} />
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  className={style["connect-div"]}
+                >
+                  <Connect label={AboutMeLabels.ABOUT_ME_CONNECT} />
+                </motion.div>
               </div>
+
+              <Navigation navValue={navValue} setNavValue={setNavValue} />
             </Stack>
           </Grid>
         </Grid>

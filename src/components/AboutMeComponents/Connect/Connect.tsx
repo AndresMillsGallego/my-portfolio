@@ -12,24 +12,40 @@ const Connect = (props: AboutMeContentProps) => {
   const { label } = props;
   const controls = useAnimationControls();
 
-  const [animateIcons, setAnimateIcons] = useState(true);
+  const [animateIcons, setAnimateIcons] = useState(false);
+  const [degree, setDegree] = useState(360);
 
-  setTimeout(() => {
-    setAnimateIcons(false);
-  }, 900);
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimateIcons(true);
+    }, 1500);
+  }, []);
 
   useEffect(() => {
     if (animateIcons) {
-      controls.start({ rotate: 360, transition: { duration: 0.5 } });
+      const updatedDegree = degree === 360 ? 0 : 360;
+      controls.start({
+        rotate: degree,
+        transition: { duration: 0.65 },
+      });
+
+      setTimeout(() => {
+        setAnimateIcons(false);
+        setDegree(updatedDegree);
+      }, 900);
     }
-  }, [animateIcons, controls]);
+  }, [animateIcons, controls, degree]);
 
   return (
     <AboutMeContainer aria-label={label}>
-      <div className={style["stack-container"]} aria-disabled={animateIcons}>
+      <div
+        className={style["stack-container"]}
+        aria-disabled={animateIcons}
+        onClick={() => setAnimateIcons(true)}
+      >
         <Stack
           direction="column"
-          spacing={5}
+          spacing={4}
           divider={
             <Divider
               orientation="vertical"
